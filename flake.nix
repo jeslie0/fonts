@@ -17,13 +17,13 @@
         {
           defaultPackage = pkgs.stdenv.mkDerivation {
             pname = "myfonts";
-            version = "0.1.1";
-            src = ./myfonts;
+            version = "0.1.2";
             dontConfigure = true;
-            src2 = gillsans;
+            src = ./.;
+            src1 = gillsans;
             installPhase = ''
-                       cp -R $src2 share/fonts/opentype/
-                       cp -R share $out/
+                       mkdir -p $out/share/fonts
+                       cp -R $src1 $out/share/fonts/opentype/
                        '';
             meta = { description = "Gill Sans font"; };
           };
