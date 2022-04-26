@@ -1,5 +1,5 @@
 {
-  description = "A flake to install the Gill Sans font family.";
+  description = "A flake giving access to fonts that I use, outside of nixpkgs.";
 
   inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
   inputs.flake-utils.url = "github:numtide/flake-utils";
@@ -22,9 +22,9 @@
             src = ./.;
             src1 = gillsans;
             installPhase = ''
-                       mkdir -p $out/share/fonts
-                       cp -R $src1 $out/share/fonts/opentype/
-                       '';
+                           mkdir -p $out/share/fonts
+                           cp -R $src1 $out/share/fonts/opentype/
+                           '';
             meta = { description = "Gill Sans font"; };
           };
         }
