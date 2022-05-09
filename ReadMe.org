@@ -4,4 +4,6 @@
 There are some fonts that aren't on nixpkgs. This is my nix flake which adds such fonts to your system. Currently, this flake installs the following fonts:
 - [[https://freefontsvault.com/gill-sans-font-download-free/][Gill Sans]] (Font Licence - Free for personal use).
 
+Each font is available as it's own package in this flake, with =defaultPackage= a derivation giving all the listed fonts.
+
 I am choosing not to include the font files in this repository; the flake is set up to download them from their sources, so that there are no licensing issues. This does mean, however, that the flake is subject to [[https://en.wikipedia.org/wiki/Link_rot][link rot]]. If this does become an issue, I will update the library with the required files.
