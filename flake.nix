@@ -10,9 +10,9 @@
       let pkgs = nixpkgs.legacyPackages.${system};
       in {
         defaultPackage = pkgs.symlinkJoin {
-          name = "myfonts";
-          version = "0.1.3";
-          paths = with self.packages.${system}; [ gillsans ]; # Add font derivation names here
+          name = "myfonts-0.1.4";
+          paths = builtins.attrValues
+            self.packages.${system}; # Add font derivation names here
         };
 
         packages.gillsans = pkgs.stdenvNoCC.mkDerivation {
@@ -29,7 +29,22 @@
             cp -R $src $out/share/fonts/opentype/
           '';
           meta = { description = "A Gill Sans Font Family derivation."; };
+        };
 
+        packages.palantino = pkgs.stdenvNoCC.mkDerivation {
+          name = "palantino-font";
+          dontConfigue = true;
+          src = pkgs.fetchzip {
+            url =
+              "https://www.dfonts.org/wp-content/uploads/fonts/Palatino.zip";
+            sha256 = "sha256-FBA8Lj2yJzrBQnazylwUwsFGbCBp1MJ1mdgifaYches=";
+            stripRoot = false;
+          };
+          installPhase = ''
+            mkdir -p $out/share/fonts
+            cp -R $src/Palatino $out/share/fonts/truetype/
+          '';
+          meta = { description = "The Palantino Font Family derivation."; };
         };
       });
 }

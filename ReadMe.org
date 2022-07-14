@@ -2,7 +2,8 @@
 [[https://img.shields.io/github/license/jeslie0/my-fonts-flake.svg]]
 * About
 There are some fonts that aren't on nixpkgs. This is my nix flake which adds such fonts to your system. Currently, this flake installs the following fonts:
-- [[https://freefontsvault.com/gill-sans-font-download-free/][Gill Sans]] (Font Licence - Free for personal use).
+- [[https://freefontsvault.com/gill-sans-font-download-free/][Gill Sans]] (Font Licence - Free for personal use);
+- [[https://www.dfonts.org/fonts/palatino-font-family/][Palantino]] (Font Licence - Free for personal use).
 
 Each font is available as it's own package in this flake, with =defaultPackage= a derivation giving all the listed fonts.
 
