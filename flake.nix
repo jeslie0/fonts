@@ -31,8 +31,8 @@
           meta = { description = "A Gill Sans Font Family derivation."; };
         };
 
-        packages.palantino = pkgs.stdenvNoCC.mkDerivation {
-          name = "palantino-font";
+        packages.palatino = pkgs.stdenvNoCC.mkDerivation {
+          name = "palatino-font";
           dontConfigue = true;
           src = pkgs.fetchzip {
             url =
@@ -44,7 +44,7 @@
             mkdir -p $out/share/fonts
             cp -R $src/Palatino $out/share/fonts/truetype/
           '';
-          meta = { description = "The Palantino Font Family derivation."; };
+          meta = { description = "The Palatino Font Family derivation."; };
         };
       });
 }
