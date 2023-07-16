@@ -20,7 +20,7 @@
           dontConfigue = true;
           src = pkgs.fetchzip {
             url =
-              "https://cdn.freefontsvault.com/wp-content/uploads/2020/02/03141445/Gill-Sans-Font-Family.zip";
+              "https://freefontsvault.s3.amazonaws.com/2020/02/Gill-Sans-Font-Family.zip";
             sha256 = "sha256-YcZUKzRskiqmEqVcbK/XL6ypsNMbY49qJYFG3yZVF78=";
             stripRoot = false;
           };
